@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    
+    <!-- Link to Font Awesome for Icons (Icons like home, email, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;  /* Sets the font for the page */
+            margin: 0;  /* Removes default margin */
+            padding: 0;  /* Removes default padding */
+            background: #f4f7fa;  /* Sets a light background color */
+            color: #333;  /* Sets text color to dark gray */
+        }
+
+        /* Main Container that holds both left and right sections */
+        .container {
+            display: flex;  /* Aligns children (left and right sections) side by side */
+            flex-wrap: wrap;  /* Ensures that the content wraps in case the screen size is small */
+            max-width: 1200px;  /* Sets a maximum width for the container */
+            margin: 30px auto;  /* Adds space at the top and bottom and centers the container */
+            padding: 0 20px;  /* Adds padding on the left and right */
+        }
+
+        /* Left Section (Profile Section) */
+        .left {
+            flex: 1;  /* Takes up 1 portion of available space */
+            background: #00bcd4;  /* Gives the left section a blue background */
+            color: white;  /* Sets text color to white */
+            margin-right: 20px;  /* Adds space between left and right sections */
+            text-align: center;  /* Centers the content inside the left section */
+            padding: 20px;  /* Adds padding inside the left section */
+            border-radius: 10px;  /* Rounds the corners of the left section */
+        }
+
+        /* Profile Image */
+        .left img {
+            width: 100%;  /* Makes the image take up the full width of the container */
+            object-fit: cover;  /* Ensures the image doesn't stretch but fills the area */
+            border-radius: 10px;  /* Rounds the corners of the image */
+            margin-bottom: 20px;  /* Adds space below the image */
+        }
+
+        /* Profile Name (Big text) */
+        .left h1 {
+            font-size: 2.5em;  /* Increases the font size */
+            margin: 10px 0;  /* Adds space above and below the name */
+        }
+
+        /* Profile Job Title */
+        .left h3 {
+            font-size: 1.2em;  /* Sets the font size slightly smaller */
+        }
+
+        /* Social and Contact Links */
+        .icons {
+            list-style: none;  /* Removes bullet points from the list */
+            padding: 0;  /* Removes default padding */
+            margin: 20px 0;  /* Adds space above and below the list */
+        }
+
+        /* Each list item in the social links section */
+        .icons li {
+            margin: 15px 0;  /* Adds space between each list item */
+            font-size: 1.1em;  /* Increases font size slightly */
+        }
+
+        /* Style for links inside the social icons */
+        .icons li a {
+            text-decoration: none;  /* Removes the underline from the link */
+            color: inherit;  /* Inherits the color of the parent text */
+        }
+
+        /* Progress bar container (for skills section) */
+        .progress-container {
+            display: flex;  /* Aligns the progress bar and text horizontally */
+            align-items: center;  /* Vertically centers the content */
+            margin: 10px 0;  /* Adds space above and below */
+        }
+
+        /* Progress bar itself */
+        .progress-container progress {
+            width: 70%;  /* Sets the width of the progress bar */
+            margin-left: 10px;  /* Adds space between the label and the progress bar */
+        }
+
+        /* Right Section (About Me, Hobbies, Education) */
+        .right {
+            flex: 2;  /* Takes up 2 portions of available space */
+            background: white;  /* Sets a white background for the right section */
+            border-left: 5px solid #eee;  /* Adds a subtle line to separate sections */
+            display: flex;  /* Enables flexbox for layout inside the right section */
+            flex-direction: column;  /* Aligns the child elements vertically */
+            padding: 20px;  /* Adds padding inside the right section */
+            border-radius: 10px;  /* Rounds the corners of the right section */
+        }
+
+        /* Title for sections in the right part */
+        .right h2 {
+            font-size: 2.2em;  /* Increases the font size */
+            color: #00bcd4;  /* Sets the title color to blue */
+        }
+
+        /* Paragraph text inside the right section */
+        .right p {
+            font-size: 1.1em;  /* Increases font size slightly */
+            line-height: 1.6;  /* Increases line height for readability */
+            margin-bottom: 15px;  /* Adds space below each paragraph */
+        }
+
+        /* Hobbies Section (Icons for each hobby) */
+        .hobbies-container {
+            display: flex;  /* Arranges the hobbies in a row */
+            justify-content: space-between;  /* Distributes space evenly between the items */
+            margin-top: 20px;  /* Adds space at the top */
+        }
+
+        /* Each individual hobby */
+        .hobbies-container div {
+            text-align: center;  /* Centers the text and images inside each hobby container */
+        }
+
+        /* Hobby Images */
+        .hobbies-container img {
+            width: 150px;  /* Sets a fixed width for the images */
+            height: 150px;  /* Sets a fixed height for the images */
+            border-radius: 50%;  /* Rounds the images to make them circular */
+            object-fit: cover;  /* Ensures the image fits without stretching */
+            margin-bottom: 10px;  /* Adds space below each image */
+        }
+
+        /* Footer Section */
+        footer {
+            background: #333;  /* Sets a dark background color for the footer */
+            color: #f1f1f1;  /* Sets a light text color */
+            padding: 20px;  /* Adds padding inside the footer */
+            text-align: center;  /* Centers the footer content */
+            margin-top: auto;  /* Ensures the footer stays at the bottom */
+        }
+
+        /* Footer Text */
+        footer p {
+            font-size: 1em;  /* Sets the font size for the footer text */
+            margin: 0;  /* Removes any margin */
+        }
+
+        /* Footer Link */
+        footer a {
+            color: #f1f1f1;  /* Sets the link color to white */
+            text-decoration: none;  /* Removes the underline from the link */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Container that holds the left and right sections -->
+    <div class="container">
+
+        <!-- Left Section (Profile Information) -->
+        <section class="left">
+            <!-- Profile Image -->
+            <img src="sk.jpg" alt="Profile Image of SKANDH HANDA">
+            <h1>SKANDH HANDA</h1>
+            <h3>Web Designer</h3>
+
+            <!-- Contact Information and Social Links -->
+            <ul class="icons">
+                <li><i class="fas fa-home"></i> Meerut (250002), Uttar Pradesh</li>
+                <li><i class="fas fa-envelope"></i> skandh.2428cse2470@kiet.edu</li>
+            </ul>
+
+            <hr>
+
+            <!-- Skill Progress Bars -->
+            <h3>Skills</h3>
+            <div class="progress-container">
+                <p>HTML</p>
+                <progress value="80" max="100"></progress>
+                <span>80%</span>
+            </div>
+            <div class="progress-container">
+                <p>CSS</p>
+                <progress value="70" max="100"></progress>
+                <span>70%</span>
+            </div>
+            <div class="progress-container">
+                <p>JavaScript</p>
+                <progress value="55" max="100"></progress>
+                <span>55%</span>
+            </div>
+
+            <hr>
+
+            <!-- Social Media Links -->
+            <h3>Social Links</h3>
+            <ul class="icons">
+                <li>
+                    <a href="https://github.com/SkandhHanda-14" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/skandh-handa-966161338" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Right Section (Detailed Information) -->
+        <section class="right">
+            <article>
+                <!-- About Me Section -->
+                <h2>A Bit About Me</h2>
+                <p>I, SKANDH HANDA, am attending KIET Group of Institutes, pursuing my Bachelor's in Computer Science and Engineering.</p>
+                <hr>
+
+                <!-- Education Information -->
+                <h2>Education Qualification</h2>
+                <p>I completed my high schooling from IIMT Academy, securing 90+% in my 10th class, and scored well in my 12th class as well.</p>
+                <hr>
+
+                <!-- Hobbies Section -->
+                <h2>Hobbies</h2>
+                <div class="hobbies-container">
+                    <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnEHImbJinkhkin9Q2FiWCsGBeGELy0rA7RA&s" alt="Painting">
+                        <h3>Painting</h3>
+                    </div>
+                    <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoJ0d_C2vMdQQtoZrNqgvNZciblCiT4VEx5g&s" alt="Music">
+                        <h3>Music</h3>
+                    </div>
+                    <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5pMxRbm-8hw4Q40VzhU-cuFNJQ7J2xakFew&s" alt="Coding">
+                        <h3>Coding</h3>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Soft Skills Section -->
+                <h2>Soft Skills</h2>
+                <ul>
+                    <li>Clear and Concise Communication</li>
+                    <li>Empathetic</li>
+                    <li>Problem Solving</li>
+                </ul>
+            </article>
+
+            <!-- Footer Section -->
+            <footer>
+                <p>&copy; 2024 Skandh Handa. All rights reserved.</p>
+            </footer>
+        </section>
+    </div>
+
+</body>
+
+</html>
